@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — [Your Name]</title>
+  <meta name="description" content="Get in touch about a website, custom software project, or the white goods ERP system." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,300..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><span class="logo-dot"></span> [Your Name]</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="work.html">Work</a></li>
+        <li><a href="erp.html">ERP System</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="nav-cta active">Get in touch</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Page hero ===== -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="kicker"><span class="dot"></span> Contact · First chat's always free</p>
+        <h1 data-reveal>
+          Let's <em>have a chat.</em>
+        </h1>
+        <p class="lead lead-wide" data-reveal>
+          Got a website to build, software to fix, or want a demo of the
+          ERP? Drop me a line and I'll get back to you — usually within
+          a day, often sooner.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Contact body ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+
+          <div data-reveal>
+            <p class="section-number">Direct</p>
+            <div class="contact-block">
+              <div class="lbl">Email</div>
+              <div class="val"><a href="mailto:[your@email.com]">[your@email.com]</a></div>
+            </div>
+            <div class="contact-block">
+              <div class="lbl">Phone</div>
+              <div class="val"><a href="tel:+44">[Phone Number]</a></div>
+            </div>
+            <div class="contact-block">
+              <div class="lbl">Based</div>
+              <div class="val">Northern Ireland, UK</div>
+            </div>
+            <div class="contact-block">
+              <div class="lbl">Hours</div>
+              <div class="val">Mon–Fri, 9 till 6<br />Evenings on request</div>
+            </div>
+
+            <div style="margin-top: 3rem; padding: 1.5rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper);">
+              <p style="font-family: var(--display); font-style: italic; font-size: 1.2rem; color: var(--ink); margin-bottom: 0.5rem;">
+                Prefer to meet?
+              </p>
+              <p style="font-size: 0.95rem;">
+                If you're a local business and want to meet face to face,
+                I'm happy to come to you. No charge for a first
+                conversation.
+              </p>
+            </div>
+          </div>
+
+          <div data-reveal>
+            <p class="section-number">Or send a note</p>
+            <!--
+              FORM SETUP NOTE:
+              Replace the action="#" with your form endpoint.
+              Easy options for static sites:
+                · Formspree: https://formspree.io  (free tier, paste your form URL)
+                · Web3Forms: https://web3forms.com (free)
+                · Basin:     https://usebasin.com
+                · Netlify Forms if hosting on Netlify (add `netlify` attribute)
+            -->
+            <form class="form" action="#" method="POST">
+              <div class="field">
+                <label for="name">Your name</label>
+                <input id="name" name="name" type="text" required autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required autocomplete="email" />
+              </div>
+              <div class="field">
+                <label for="business">Business name <span style="text-transform: none; letter-spacing: 0; color: var(--ink-muted);">(optional)</span></label>
+                <input id="business" name="business" type="text" autocomplete="organization" />
+              </div>
+              <div class="field">
+                <label for="topic">What's this about?</label>
+                <select id="topic" name="topic">
+                  <option>A new website</option>
+                  <option>Custom software / app</option>
+                  <option>ERP system demo</option>
+                  <option>Fixing something I already have</option>
+                  <option>Just a question</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message">Tell me about it</label>
+                <textarea id="message" name="message" rows="5" required placeholder="A sentence or two is plenty to get started."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send message <span class="arrow">→</span></button>
+              <p class="form-note">I'll reply within one working day.</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>[Your Name]</h3>
+          <p>
+            Web &amp; software for small and medium businesses across
+            Northern Ireland. Built locally, built to last.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="erp.html">ERP System</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:[your@email.com]">[your@email.com]</a></li>
+            <li><a href="tel:+44">[Phone Number]</a></li>
+            <li><a href="contact.html">Contact form →</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Based</h4>
+          <ul>
+            <li>Northern Ireland, UK</li>
+            <li>Working remotely &amp; in-person</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year></span> [Your Name]. All rights reserved.</span>
+        <span>Built in Northern Ireland.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
