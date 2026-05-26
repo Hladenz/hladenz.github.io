@@ -25,12 +25,13 @@
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   els.forEach(el => io.observe(el));
 })();
 
-// Set current year in footer
+// Footer year
 (function () {
-  const y = document.querySelectorAll('[data-year]');
-  y.forEach(el => { el.textContent = new Date().getFullYear(); });
+  document.querySelectorAll('[data-year]').forEach(el => {
+    el.textContent = new Date().getFullYear();
+  });
 })();

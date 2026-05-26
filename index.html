@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[Your Name] — Web &amp; software for local businesses in Northern Ireland</title>
-  <meta name="description" content="A young Northern Irish developer building honest, well-made websites and software for small and medium businesses across the country." />
+  <title>Skiddaw Digital — Websites &amp; business software for Cumbrian business</title>
+  <meta name="description" content="Skiddaw Digital builds reliable websites and custom software for pubs, holiday lets, shops and trades across Cumbria and the Lake District. Honest pricing, plain English, by William." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,300..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -15,11 +15,18 @@
   <!-- ===== Header ===== -->
   <header class="site-header">
     <div class="nav-inner">
-      <a href="index.html" class="logo"><span class="logo-dot"></span> [Your Name]</a>
+      <a href="index.html" class="logo">
+        <svg class="logo-mark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="1,21 8,9 13,16 18,7 23,21" fill="#2D4837"/>
+          <polygon points="8,9 13,16 11,21 1,21" fill="#1F3328"/>
+          <circle cx="19" cy="5" r="2" fill="#D9A867"/>
+        </svg>
+        <span>skiddaw<span class="digital">.digital</span></span>
+      </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
       <ul class="nav-list" id="nav-list">
+        <li><a href="services.html">Services</a></li>
         <li><a href="work.html">Work</a></li>
-        <li><a href="erp.html">ERP System</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html" class="nav-cta">Get in touch</a></li>
       </ul>
@@ -31,91 +38,154 @@
     <!-- ===== Hero ===== -->
     <section class="hero">
       <div class="container">
-        <p class="kicker"><span class="dot"></span> Independent developer · Based in Northern Ireland</p>
+        <p class="kicker"><span class="dot"></span> Cumbria · Lake District · est. 2026</p>
         <div class="hero-grid">
           <h1 class="display-xl" data-reveal>
-            Web and software,<br />
-            built for <em>local</em> business.
+            Websites &amp; software for <span class="accent">Cumbrian</span> business.
           </h1>
           <div class="hero-meta" data-reveal>
             <p class="hero-lead">
-              I'm a young Northern Irish developer helping small and
-              medium businesses across the country build websites and
-              software that actually work for them.
+              Skiddaw Digital builds reliable websites and custom systems
+              for pubs, holiday lets, shops and trades across Cumbria. Honest pricing.
+              Plain English. Built to last.
             </p>
             <div class="cta-row">
-              <a href="work.html" class="btn btn-primary">See the work <span class="arrow">→</span></a>
-              <a href="contact.html" class="btn btn-ghost">Start a project</a>
+              <a href="services.html" class="btn btn-primary">See services &amp; pricing <span class="arrow">→</span></a>
+              <a href="work.html" class="btn btn-ghost">View the work</a>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Low-poly Skiddaw mountain panorama -->
+      <div class="mountain-banner">
+        <svg viewBox="0 0 1600 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice" role="img" aria-label="A low-poly illustration of Skiddaw and the surrounding Cumbrian fells.">
+          <!-- Sky -->
+          <rect width="1600" height="460" fill="#E4E8E3"/>
+
+          <!-- Sun -->
+          <circle cx="1295" cy="135" r="60" fill="#D9A867"/>
+
+          <!-- Far range, lightest -->
+          <polygon fill="#B5C2BD" points="0,360 90,290 200,340 320,265 440,325 560,265 680,320 800,260 920,310 1040,260 1160,310 1280,270 1400,310 1520,290 1600,310 1600,460 0,460"/>
+
+          <!-- Mid range -->
+          <polygon fill="#758678" points="0,400 130,330 280,385 410,310 550,375 700,315 830,365 950,320 1080,355 1200,315 1340,355 1480,320 1600,335 1600,460 0,460"/>
+
+          <!-- Sub peak left -->
+          <polygon fill="#4A6855" points="60,460 200,265 200,460"/>
+          <polygon fill="#2D4837" points="200,265 200,460 350,460"/>
+
+          <!-- Skiddaw — main peak, light face -->
+          <polygon fill="#3D5A48" points="280,460 600,75 600,460"/>
+
+          <!-- Skiddaw — main peak, shadow face -->
+          <polygon fill="#233D2E" points="600,75 600,460 940,460"/>
+
+          <!-- Snow cap on Skiddaw -->
+          <polygon fill="#F7F4EA" points="568,150 600,75 632,150 622,178 610,162 600,168 588,162 578,178"/>
+
+          <!-- Sub peak right (Skiddaw Little Man-ish) -->
+          <polygon fill="#4A6855" points="870,460 1050,225 1050,460"/>
+          <polygon fill="#2D4837" points="1050,225 1050,460 1230,460"/>
+
+          <!-- Smaller right peak -->
+          <polygon fill="#3D5A48" points="1180,460 1320,295 1320,460"/>
+          <polygon fill="#233D2E" points="1320,295 1320,460 1460,460"/>
+
+          <!-- Far right small hill -->
+          <polygon fill="#4A6855" points="1430,460 1530,355 1600,400 1600,460"/>
+
+          <!-- Foreground hills, darkest -->
+          <polygon fill="#1A2D22" points="0,460 0,425 140,400 290,420 430,395 570,425 720,400 850,425 990,400 1120,425 1260,400 1400,425 1530,405 1600,425 1600,460"/>
+        </svg>
+      </div>
+
+      <!-- Elevation strap under mountain -->
+      <div class="elev-strap">
+        <div class="elev-strap-inner">
+          <span><span class="accent">▲</span> SKIDDAW · 931m · 3,054ft</span>
+          <span>NY 2620 2891</span>
+          <span>54.6498°N · 3.1421°W</span>
+          <span>Lake District National Park</span>
+        </div>
+      </div>
     </section>
 
-    <!-- ===== Strap marquee ===== -->
-    <div class="strap" aria-hidden="true">
-      <div class="strap-track">
-        <span>Websites</span>
-        <span>Custom software</span>
-        <span>ERP &amp; operations</span>
-        <span>Driver &amp; field apps</span>
-        <span>Built in Northern Ireland</span>
-        <span>For local business</span>
-        <!-- duplicate for seamless loop -->
-        <span>Websites</span>
-        <span>Custom software</span>
-        <span>ERP &amp; operations</span>
-        <span>Driver &amp; field apps</span>
-        <span>Built in Northern Ireland</span>
-        <span>For local business</span>
-      </div>
-    </div>
-
-    <!-- ===== Intro / pitch ===== -->
+    <!-- ===== Services overview ===== -->
     <section class="section">
       <div class="container">
-        <div class="services-head">
+        <div class="split-head">
           <div>
-            <p class="section-number">01 — What I do</p>
+            <p class="section-tag">01 / What we do</p>
             <h2 class="display-l" data-reveal>
-              Big-agency work, without the <em>big-agency price tag.</em>
+              Three things,<br/>done <span class="accent">properly.</span>
             </h2>
           </div>
           <p class="lead lead-wide" data-reveal>
-            Most local businesses don't need a thirty-person agency.
-            They need someone who'll pick up the phone, do the work,
-            and stick around afterwards. That's the job.
+            Websites that bring you bookings and enquiries. Custom
+            software that gets your business off spreadsheets. And the
+            care plans to keep it all working long after launch.
           </p>
         </div>
 
-        <div class="services-grid">
-          <div class="service-card" data-reveal>
-            <span class="num">/ 01</span>
+        <div class="svc-grid">
+          <a href="services.html#websites" class="svc-card" data-reveal>
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                <rect x="3" y="6" width="26" height="20" rx="2"/>
+                <line x1="3" y1="11" x2="29" y2="11"/>
+                <circle cx="6.5" cy="8.5" r="0.6" fill="currentColor"/>
+                <circle cx="9" cy="8.5" r="0.6" fill="currentColor"/>
+              </svg>
+            </div>
+            <span class="num">01</span>
             <h3>Websites</h3>
+            <span class="from-price">From £499</span>
             <p>
-              Fast, well-designed websites built to last. One-pagers,
-              booking sites, brochure sites, shops — whatever the
-              business actually needs.
+              Fast, modern websites for tradespeople, B&amp;Bs, holiday
+              lets, pubs and shops. Three tiers from a simple one-pager
+              to bespoke direct-booking builds.
             </p>
-          </div>
-          <div class="service-card" data-reveal>
-            <span class="num">/ 02</span>
+            <span class="more">See pricing →</span>
+          </a>
+
+          <a href="services.html#software" class="svc-card" data-reveal>
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                <polyline points="9,11 4,16 9,21"/>
+                <polyline points="23,11 28,16 23,21"/>
+                <line x1="19" y1="7" x2="13" y2="25"/>
+              </svg>
+            </div>
+            <span class="num">02</span>
             <h3>Custom software</h3>
+            <span class="from-price">From £495</span>
             <p>
-              Bespoke internal tools and apps that fit the way your
-              business actually runs, instead of forcing your team to
-              fit some off-the-shelf system.
+              Bespoke tools and integrations that fit how your business
+              actually runs. Stock trackers, booking systems, dashboards,
+              line-of-business apps — built in Python and modern web tech.
             </p>
-          </div>
-          <div class="service-card" data-reveal>
-            <span class="num">/ 03</span>
-            <h3>ERP &amp; operations</h3>
+            <span class="more">See pricing →</span>
+          </a>
+
+          <a href="services.html#care" class="svc-card" data-reveal>
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                <path d="M16 4 L26 9 V17 C26 22 21 26 16 28 C11 26 6 22 6 17 V9 Z"/>
+                <polyline points="11,16 15,20 21,13"/>
+              </svg>
+            </div>
+            <span class="num">03</span>
+            <h3>Care plans</h3>
+            <span class="from-price">From £29/mo</span>
             <p>
-              Full-stack ERP for white goods and similar trades — sales,
-              stock, routes, driver app and reporting in one place.
-              <a href="erp.html" style="color: var(--moss); border-bottom: 1px solid var(--moss);">See the system →</a>
+              Hosting, backups, security updates and ongoing help. Your
+              website stays fast, safe and up to date — without you
+              having to think about it.
             </p>
-          </div>
+            <span class="more">See pricing →</span>
+          </a>
         </div>
       </div>
     </section>
@@ -123,58 +193,59 @@
     <!-- ===== Featured work ===== -->
     <section class="section" style="padding-top: 0;">
       <div class="container">
-        <div class="services-head">
+        <div class="split-head">
           <div>
-            <p class="section-number">02 — Recent work</p>
+            <p class="section-tag">02 / Recent work</p>
             <h2 class="display-l" data-reveal>
-              Real projects, for <em>real businesses.</em>
+              Built for <span class="accent">real</span> businesses.
             </h2>
           </div>
           <p class="lead lead-wide" data-reveal>
-            A small, careful list of work I'm proud of — not a hundred
-            half-finished case studies.
+            A small, careful list of projects worth showing — from a
+            Lakeland guesthouse to business-critical Python software for
+            a growing retailer.
           </p>
         </div>
 
-        <div class="featured-list" data-reveal>
-          <a href="work.html#hawcliffe" class="featured-row">
-            <span class="num">/ 01</span>
+        <div class="work-list" data-reveal>
+          <a href="work.html#hawcliffe" class="work-row">
+            <span class="num">01</span>
             <h3>Hawcliffe House</h3>
             <p class="desc">Guesthouse website for a family-run B&amp;B in Keswick.</p>
             <span class="arrow-link">View →</span>
           </a>
-          <a href="work.html#genesis" class="featured-row">
-            <span class="num">/ 02</span>
+          <a href="work.html#genesis" class="work-row">
+            <span class="num">02</span>
             <h3>Genesis Home Appliances</h3>
-            <p class="desc">Custom software &amp; web work for a white goods business.</p>
+            <p class="desc">Business-critical Python software for a growing white-goods retailer.</p>
             <span class="arrow-link">View →</span>
           </a>
-          <a href="erp.html" class="featured-row">
-            <span class="num">/ 03</span>
-            <h3>White Goods ERP <em style="font-style:italic; color:var(--moss);">— for sale</em></h3>
-            <p class="desc">Full ERP with driver app, route planning, sales &amp; reporting.</p>
-            <span class="arrow-link">Details →</span>
+          <a href="work.html#erp" class="work-row">
+            <span class="num">03</span>
+            <h3>White-goods ERP</h3>
+            <p class="desc">Full ERP system — driver app, routes, sales, reporting. Available to licence.</p>
+            <span class="arrow-link">View →</span>
           </a>
         </div>
       </div>
     </section>
 
     <!-- ===== Why local ===== -->
-    <section class="section" style="background: var(--cream-deep); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+    <section class="section" style="background: var(--stone-50); border-top: 1px solid var(--stone-200); border-bottom: 1px solid var(--stone-200);">
       <div class="container">
-        <div class="services-head" style="margin-bottom: 0; grid-template-columns: 1fr;">
-          <div style="max-width: 28ch;">
-            <p class="section-number">03 — Why local</p>
+        <div class="split-head" style="margin-bottom: 0;">
+          <div>
+            <p class="section-tag">03 / Why Skiddaw</p>
             <h2 class="display-l" data-reveal>
-              I work with people I can <em>actually meet.</em>
+              Named after the <span class="accent">hill,</span><br/>built like it.
             </h2>
           </div>
-          <p class="lead lead-wide" data-reveal style="max-width: 60ch;">
-            A lot of small and medium businesses in Northern Ireland get
-            sold expensive systems by people they never see again. I'd
-            rather be the developer you can call, meet for a coffee, and
-            trust to do right by your business — because if I let you
-            down, I'll see you in the shop next week.
+          <p class="lead lead-wide" data-reveal>
+            Skiddaw's stood over the northern Lakes for a long while
+            without falling over. Aim's the same: solid websites and
+            software for Cumbrian business, built by someone you can
+            actually meet. No agency layers, no overseas support queue.
+            Just William, in Cumbria, doing the work.
           </p>
         </div>
       </div>
@@ -182,10 +253,12 @@
 
     <!-- ===== Big CTA ===== -->
     <section class="cta-banner">
-      <div class="cta-deco" aria-hidden="true">hello.</div>
+      <svg class="cta-mountains" viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <polygon fill="#F0EDE2" points="0,280 130,120 230,200 350,60 470,180 570,90 700,210 700,280"/>
+      </svg>
       <div class="container" style="position: relative; z-index: 1;">
-        <p class="kicker" style="color: var(--moss-bright);"><span class="dot" style="background: var(--moss-bright);"></span> Let's talk</p>
-        <h2>Got an idea? Let's <em>chat about it.</em></h2>
+        <p class="kicker" style="color: var(--sun);"><span class="dot" style="background: var(--sun);"></span> Let's talk</p>
+        <h2>Got a project? Let's <span class="accent">have a chat.</span></h2>
         <p>
           No corporate sales pitch. Just a straightforward conversation
           about what you're trying to do and whether I can help. First
@@ -202,40 +275,41 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3>[Your Name]</h3>
+          <h3>skiddaw<span class="digital">.digital</span></h3>
           <p>
-            Web &amp; software for small and medium businesses across
-            Northern Ireland. Built locally, built to last.
+            Websites and custom software for Cumbrian small and medium
+            businesses. Built in the Lakes, built to last.
           </p>
         </div>
         <div class="footer-col">
           <h4>Site</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
             <li><a href="work.html">Work</a></li>
-            <li><a href="erp.html">ERP System</a></li>
             <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Contact</h4>
+          <h4>Get in touch</h4>
           <ul>
-            <li><a href="mailto:[your@email.com]">[your@email.com]</a></li>
-            <li><a href="tel:+44">[Phone Number]</a></li>
+            <li><a href="mailto:william@skiddaw.digital">william@skiddaw.digital</a></li>
             <li><a href="contact.html">Contact form →</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Based</h4>
           <ul>
-            <li>Northern Ireland, UK</li>
+            <li>Cumbria, UK</li>
+            <li>The Lake District</li>
             <li>Working remotely &amp; in-person</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© <span data-year></span> [Your Name]. All rights reserved.</span>
-        <span>Built in Northern Ireland.</span>
+        <span>© <span data-year></span> Skiddaw Digital · William</span>
+        <span><span class="accent">▲</span> Built in Cumbria · NY 2620 2891</span>
       </div>
     </div>
   </footer>

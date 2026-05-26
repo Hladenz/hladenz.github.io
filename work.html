@@ -3,22 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Work — [Your Name]</title>
-  <meta name="description" content="Selected web and software projects by [Your Name], a Northern Irish developer working with local small and medium businesses." />
+  <title>Work — Skiddaw Digital</title>
+  <meta name="description" content="Selected projects: a Lake District guesthouse website, business-critical Python software for a white-goods retailer, and a full ERP system available for licence." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,300..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <header class="site-header">
     <div class="nav-inner">
-      <a href="index.html" class="logo"><span class="logo-dot"></span> [Your Name]</a>
+      <a href="index.html" class="logo">
+        <svg class="logo-mark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="1,21 8,9 13,16 18,7 23,21" fill="#2D4837"/>
+          <polygon points="8,9 13,16 11,21 1,21" fill="#1F3328"/>
+          <circle cx="19" cy="5" r="2" fill="#D9A867"/>
+        </svg>
+        <span>skiddaw<span class="digital">.digital</span></span>
+      </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
       <ul class="nav-list" id="nav-list">
+        <li><a href="services.html">Services</a></li>
         <li><a href="work.html" class="active">Work</a></li>
-        <li><a href="erp.html">ERP System</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html" class="nav-cta">Get in touch</a></li>
       </ul>
@@ -32,13 +39,22 @@
       <div class="container">
         <p class="kicker"><span class="dot"></span> Selected work · 2023 → today</p>
         <h1 data-reveal>
-          A small, careful list of <em>good work.</em>
+          Three projects.<br/>
+          Worth <span class="accent">a proper look.</span>
         </h1>
         <p class="lead lead-wide" data-reveal>
-          I'd rather show you a few projects I'm genuinely proud of than
-          dump a long list of half-finished case studies. Here's what I've
-          been working on lately.
+          A small careful list of work I've genuinely shipped, from a
+          family-run Lake District guesthouse to substantial Python
+          systems running real businesses.
         </p>
+
+        <svg class="page-hero-mark" viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="180" cy="35" r="18" fill="#D9A867"/>
+          <polygon fill="#B5C2BD" points="0,180 60,90 130,140 180,80 220,130 220,180"/>
+          <polygon fill="#3D5A48" points="20,180 95,40 95,180"/>
+          <polygon fill="#233D2E" points="95,40 95,180 175,180"/>
+          <polygon fill="#F7F4EA" points="85,70 95,40 105,70 100,85 95,78 90,85"/>
+        </svg>
       </div>
     </section>
 
@@ -46,11 +62,11 @@
     <section class="case" id="hawcliffe">
       <div class="container">
         <div class="case-head">
-          <div class="case-meta">
-            <span class="tag">/ 01 — Hospitality · Website</span>
-            <h2 data-reveal>Hawcliffe House <em>—</em> a guesthouse, online.</h2>
+          <div>
+            <p class="case-meta-tag">/ 01 — Hospitality · Website</p>
+            <h2 data-reveal>Hawcliffe House <span class="accent">—</span><br/>a guesthouse, online.</h2>
           </div>
-          <p data-reveal style="max-width: 42ch;">
+          <p data-reveal style="max-width: 44ch;">
             A family-run B&amp;B in Keswick needed a website that looked
             as warm as the place itself, and that guests could actually
             use to book a room without faff.
@@ -58,7 +74,21 @@
         </div>
 
         <div class="case-visual" data-reveal>
-          <span class="visual-label">Hawcliffe House<br />Keswick · Cumbria</span>
+          <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-label="Illustration of Skiddaw rising above Keswick">
+            <rect width="800" height="450" fill="#E4E8E3"/>
+            <circle cx="640" cy="100" r="48" fill="#D9A867"/>
+            <polygon fill="#B5C2BD" points="0,300 90,230 200,280 320,220 440,275 560,225 680,275 800,250 800,450 0,450"/>
+            <polygon fill="#758678" points="0,340 130,280 280,330 410,260 560,320 700,275 800,300 800,450 0,450"/>
+            <polygon fill="#3D5A48" points="120,450 380,140 380,450"/>
+            <polygon fill="#233D2E" points="380,140 380,450 640,450"/>
+            <polygon fill="#F7F4EA" points="358,200 380,140 402,200 395,222 385,210 380,215 375,210 365,222"/>
+            <polygon fill="#1A2D22" points="0,450 0,415 150,395 320,420 480,395 640,420 800,400 800,450"/>
+            <!-- Small house silhouettes in foreground -->
+            <rect x="180" y="395" width="40" height="30" fill="#0D1117"/>
+            <polygon points="180,395 200,378 220,395" fill="#0D1117"/>
+            <rect x="430" y="400" width="50" height="30" fill="#0D1117"/>
+            <polygon points="430,400 455,380 480,400" fill="#0D1117"/>
+          </svg>
         </div>
 
         <div class="case-body">
@@ -69,15 +99,15 @@
             </div>
             <div>
               <dt>Scope</dt>
-              <dd>Brand-aligned guesthouse website</dd>
+              <dd>Full guesthouse website — design &amp; build</dd>
             </div>
             <div>
               <dt>Live at</dt>
-              <dd><a href="http://www.hawcliffehouse.co.uk/" target="_blank" rel="noopener" style="border-bottom: 1px solid var(--moss);">hawcliffehouse.co.uk →</a></dd>
+              <dd><a href="http://www.hawcliffehouse.co.uk/" target="_blank" rel="noopener">hawcliffehouse.co.uk →</a></dd>
             </div>
             <div>
               <dt>Built with</dt>
-              <dd>HTML, CSS, JavaScript</dd>
+              <dd>HTML · CSS · JavaScript</dd>
             </div>
           </dl>
 
@@ -85,16 +115,21 @@
             <p>
               Hawcliffe House is the kind of B&amp;B people come back to
               year after year. The brief was simple: build a site that
-              feels like the place — warm, welcoming, well-kept — and that
-              makes it easy for new guests to find them, see the rooms,
-              and get in touch.
+              feels like the place — warm, welcoming, well-kept — and
+              that makes it easy for new guests to find them, see the
+              rooms, and get in touch.
             </p>
             <p>
-              I built a clean, fast site that puts the rooms, the location,
-              and the contact details where they should be — front and
-              centre. No bloat, no pop-ups, no cookie-banner war. Just a
-              website that works on a phone in the carpark of the Lake
-              District.
+              I built and designed a clean, fast site that puts the rooms,
+              the location and the contact details where they should be —
+              front and centre. No bloat, no pop-ups, no cookie-banner
+              war. Just a website that works on a phone in the carpark of
+              the Lake District, which is exactly when guests are looking
+              for it.
+            </p>
+            <p>
+              You can see the finished site at
+              <a href="http://www.hawcliffehouse.co.uk/" target="_blank" rel="noopener" style="color: var(--fell); border-bottom: 1px solid var(--fell);">hawcliffehouse.co.uk →</a>
             </p>
           </div>
         </div>
@@ -105,19 +140,38 @@
     <section class="case" id="genesis">
       <div class="container">
         <div class="case-head">
-          <div class="case-meta">
-            <span class="tag">/ 02 — Retail &amp; logistics · Software</span>
-            <h2 data-reveal>Genesis Home Appliances <em>—</em> running the operation.</h2>
+          <div>
+            <p class="case-meta-tag">/ 02 — Retail · Custom software</p>
+            <h2 data-reveal>Genesis Home Appliances <span class="accent">—</span><br/>software that pulled its weight.</h2>
           </div>
-          <p data-reveal style="max-width: 42ch;">
-            A growing white goods business needed software that could
-            actually keep up with sales, deliveries and stock without
-            falling back on spreadsheets and phone calls.
+          <p data-reveal style="max-width: 44ch;">
+            A growing white-goods retailer needed business-critical
+            software built around how they actually trade — not another
+            off-the-shelf system they'd have to bend their business to fit.
           </p>
         </div>
 
-        <div class="case-visual moss" data-reveal>
-          <span class="visual-label">Genesis Home Appliances<br />Sales · Routes · Reporting</span>
+        <div class="case-visual dark" data-reveal>
+          <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-label="Abstract data visualisation">
+            <rect width="800" height="450" fill="#0D1117"/>
+            <!-- Mountain silhouette echo -->
+            <polygon fill="#1F3328" points="0,450 0,360 120,290 260,330 380,240 510,310 640,255 800,300 800,450"/>
+            <polygon fill="#2D4837" points="0,450 0,410 160,370 320,395 480,365 640,395 800,375 800,450"/>
+            <!-- Data lines / chart abstraction -->
+            <g stroke="#D9A867" stroke-width="2.5" fill="none" opacity="0.9">
+              <polyline points="80,250 180,210 260,230 360,170 440,195 540,140 640,165 720,110"/>
+            </g>
+            <g stroke="#3D6750" stroke-width="2" fill="none" opacity="0.75">
+              <polyline points="80,290 180,265 260,275 360,235 440,250 540,210 640,225 720,185"/>
+            </g>
+            <!-- Glyph dots -->
+            <circle cx="180" cy="210" r="4" fill="#D9A867"/>
+            <circle cx="360" cy="170" r="4" fill="#D9A867"/>
+            <circle cx="540" cy="140" r="4" fill="#D9A867"/>
+            <circle cx="720" cy="110" r="4" fill="#D9A867"/>
+            <!-- Python-style brackets in corner -->
+            <text x="60" y="100" font-family="ui-monospace, monospace" font-size="22" fill="#D9A867" opacity="0.6">{ python }</text>
+          </svg>
         </div>
 
         <div class="case-body">
@@ -128,7 +182,120 @@
             </div>
             <div>
               <dt>Scope</dt>
-              <dd>Custom operations software &amp; driver app</dd>
+              <dd>Custom business-critical software</dd>
+            </div>
+            <div>
+              <dt>Built with</dt>
+              <dd>Python · custom integrations</dd>
+            </div>
+            <div>
+              <dt>Outcome</dt>
+              <dd>Real, measurable business results</dd>
+            </div>
+          </dl>
+
+          <div class="case-text" data-reveal>
+            <p>
+              Genesis is a growing white-goods retailer running serious
+              volume. The problem was the usual one for a business at
+              that stage: the off-the-shelf tools couldn't keep up,
+              spreadsheets had multiplied, and the people running the
+              place were spending too much time wrangling systems instead
+              of selling appliances.
+            </p>
+            <p>
+              I built business-critical custom software in Python,
+              designed around how Genesis actually operates day to day.
+              Specific to their workflows, integrated where it needed to
+              be, and replacing the bits of the operation where manual
+              effort was costing real money.
+            </p>
+            <p>
+              The result was a great business outcome — the kind you can
+              point at on a P&amp;L. Faster operations, fewer mistakes,
+              and the team freed up to focus on the parts of the
+              business that matter most.
+            </p>
+
+            <div class="aside-card">
+              <p class="lbl">For clarity</p>
+              <p>
+                Skiddaw Digital built the internal Python software for
+                Genesis only — <strong>not</strong> their public website.
+                And the ERP system below is a completely separate piece
+                of work, unrelated to Genesis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Case 03 — ERP system ===== -->
+    <section class="case" id="erp">
+      <div class="container">
+        <div class="case-head">
+          <div>
+            <p class="case-meta-tag">/ 03 — Side project · ERP system</p>
+            <h2 data-reveal>White-goods ERP <span class="accent">—</span><br/>a full operations system.</h2>
+          </div>
+          <p data-reveal style="max-width: 44ch;">
+            An independent project — no connection to Genesis. A
+            self-built ERP for white-goods and appliance businesses,
+            covering sales, stock, route planning, a driver app and
+            reporting. SAP-class feature set, sized for SMBs.
+          </p>
+        </div>
+
+        <div class="case-visual" data-reveal>
+          <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-label="Module diagram for the ERP system">
+            <rect width="800" height="450" fill="#E4E8E3"/>
+            <!-- Faint mountain background -->
+            <polygon fill="#B5C2BD" opacity="0.5" points="0,450 0,290 160,200 320,260 480,180 640,250 800,210 800,450"/>
+            <!-- Module grid -->
+            <g font-family="ui-monospace, monospace" font-size="13" fill="#0D1117" text-anchor="middle">
+              <g>
+                <rect x="80" y="100" width="170" height="80" rx="8" fill="#FBF8EE" stroke="#2D4837" stroke-width="1.5"/>
+                <text x="165" y="135" font-family="Bricolage Grotesque, sans-serif" font-size="16" font-weight="500">Sales</text>
+                <text x="165" y="158" fill="#4A5560" font-size="11">orders · invoices</text>
+              </g>
+              <g>
+                <rect x="315" y="100" width="170" height="80" rx="8" fill="#FBF8EE" stroke="#2D4837" stroke-width="1.5"/>
+                <text x="400" y="135" font-family="Bricolage Grotesque, sans-serif" font-size="16" font-weight="500">Stock</text>
+                <text x="400" y="158" fill="#4A5560" font-size="11">live levels · transfers</text>
+              </g>
+              <g>
+                <rect x="550" y="100" width="170" height="80" rx="8" fill="#FBF8EE" stroke="#2D4837" stroke-width="1.5"/>
+                <text x="635" y="135" font-family="Bricolage Grotesque, sans-serif" font-size="16" font-weight="500">Routes</text>
+                <text x="635" y="158" fill="#4A5560" font-size="11">auto-planning</text>
+              </g>
+              <g>
+                <rect x="200" y="220" width="170" height="80" rx="8" fill="#2D4837" stroke="#2D4837" stroke-width="1.5"/>
+                <text x="285" y="255" font-family="Bricolage Grotesque, sans-serif" font-size="16" font-weight="500" fill="#F7F4EA">Driver app</text>
+                <text x="285" y="278" fill="#D9A867" font-size="11">POD · sync</text>
+              </g>
+              <g>
+                <rect x="430" y="220" width="170" height="80" rx="8" fill="#FBF8EE" stroke="#2D4837" stroke-width="1.5"/>
+                <text x="515" y="255" font-family="Bricolage Grotesque, sans-serif" font-size="16" font-weight="500">Reporting</text>
+                <text x="515" y="278" fill="#4A5560" font-size="11">KPIs · exports</text>
+              </g>
+            </g>
+            <!-- Connecting lines between modules -->
+            <g stroke="#2D4837" stroke-width="1" opacity="0.4" fill="none">
+              <line x1="250" y1="180" x2="285" y2="220"/>
+              <line x1="400" y1="180" x2="285" y2="220"/>
+              <line x1="400" y1="180" x2="515" y2="220"/>
+              <line x1="550" y1="180" x2="515" y2="220"/>
+              <line x1="370" y1="260" x2="430" y2="260"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="case-body">
+          <dl class="case-facts" data-reveal>
+            <div>
+              <dt>Project</dt>
+              <dd>Self-initiated side project</dd>
             </div>
             <div>
               <dt>Modules</dt>
@@ -138,44 +305,54 @@
               <dt>Comparable to</dt>
               <dd>SAP-class ERP, sized for SMBs</dd>
             </div>
+            <div>
+              <dt>Status</dt>
+              <dd>Available to licence</dd>
+            </div>
           </dl>
 
           <div class="case-text" data-reveal>
             <p>
-              Genesis Home Appliances came to me with the usual problem:
-              the business had outgrown its tools. Sales were going in one
-              place, stock in another, drivers were getting routes by
-              WhatsApp, and end-of-month reporting was a job no one wanted.
+              A complete ERP system I built independently of any client
+              work, purpose-designed for white-goods and appliance
+              businesses. Five modules — sales, stock, route planning, a
+              driver app and reporting — all talking to each other so
+              your business doesn't have to wrangle spreadsheets.
             </p>
             <p>
-              I built a full custom ERP around how the business actually
-              works — order through to doorstep. Sales staff log orders in
-              one place, stock updates in real time, routes are planned
-              automatically and pushed to a driver app on the van, and
-              management get the reports they need without anyone
-              wrangling spreadsheets at midnight.
+              The full feature set is comparable to SAP, but priced and
+              shaped for small and medium businesses rather than
+              enterprises. Sales staff log orders, stock updates live,
+              routes auto-build by postcode and load, and the driver app
+              on the van syncs proof of delivery back to the office in
+              real time.
             </p>
-            <p>
-              That same platform is now available to other white-goods and
-              appliance businesses as a productised system —
-              <a href="erp.html" style="color: var(--moss); border-bottom: 1px solid var(--moss);">have a look at the ERP system →</a>
-            </p>
+
+            <div class="aside-card">
+              <p class="lbl">For sale / licence</p>
+              <p>
+                If you run an appliance, white-goods or similar
+                logistics-led retail business and this sounds like what
+                you've been trying to build out of spreadsheets — the
+                system is available to licence.
+                <a href="contact.html?subject=ERP%20enquiry" style="color: var(--fell); border-bottom: 1px solid var(--fell);">Get in touch for a demo →</a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== What's next ===== -->
-    <section class="section" style="background: var(--cream-deep); border-top: 1px solid var(--line);">
+    <!-- ===== Next ===== -->
+    <section class="section" style="background: var(--stone-50); border-top: 1px solid var(--stone-200);">
       <div class="container" style="text-align: center;">
-        <p class="section-number" style="justify-content: center;">Next project</p>
+        <p class="section-tag" style="justify-content: center;">Next</p>
         <h2 class="display-l" data-reveal style="margin: 0 auto 1.5rem; max-width: 22ch;">
-          Could be <em>yours.</em>
+          Could be <span class="accent">yours.</span>
         </h2>
         <p class="lead" data-reveal style="margin: 0 auto 2rem; max-width: 50ch;">
-          If you're running a small or medium business in Northern Ireland
-          and need a website or software done right, I'd love to hear from
-          you.
+          If you run a Cumbrian business and need a website or some real
+          software building — I'd love to hear what you're up to.
         </p>
         <a href="contact.html" class="btn btn-accent">Start a project <span class="arrow">→</span></a>
       </div>
@@ -187,40 +364,41 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3>[Your Name]</h3>
+          <h3>skiddaw<span class="digital">.digital</span></h3>
           <p>
-            Web &amp; software for small and medium businesses across
-            Northern Ireland. Built locally, built to last.
+            Websites and custom software for Cumbrian small and medium
+            businesses. Built in the Lakes, built to last.
           </p>
         </div>
         <div class="footer-col">
           <h4>Site</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
             <li><a href="work.html">Work</a></li>
-            <li><a href="erp.html">ERP System</a></li>
             <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Contact</h4>
+          <h4>Get in touch</h4>
           <ul>
-            <li><a href="mailto:[your@email.com]">[your@email.com]</a></li>
-            <li><a href="tel:+44">[Phone Number]</a></li>
+            <li><a href="mailto:william@skiddaw.digital">william@skiddaw.digital</a></li>
             <li><a href="contact.html">Contact form →</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Based</h4>
           <ul>
-            <li>Northern Ireland, UK</li>
+            <li>Cumbria, UK</li>
+            <li>The Lake District</li>
             <li>Working remotely &amp; in-person</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© <span data-year></span> [Your Name]. All rights reserved.</span>
-        <span>Built in Northern Ireland.</span>
+        <span>© <span data-year></span> Skiddaw Digital · William</span>
+        <span><span class="accent">▲</span> Built in Cumbria · NY 2620 2891</span>
       </div>
     </div>
   </footer>
