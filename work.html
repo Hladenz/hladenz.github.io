@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Work — Skiddaw Digital</title>
-  <meta name="description" content="Selected projects: a Lake District guesthouse website, business-critical Python software for a white-goods retailer, and a full ERP system available for licence." />
+  <meta name="description" content="Selected projects: a Lake District guesthouse website, a pricing engine and in-store sales system for a white-goods retailer, and a full ERP system available for licence." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -141,36 +141,83 @@
       <div class="container">
         <div class="case-head">
           <div>
-            <p class="case-meta-tag">/ 02 — Retail · Custom software</p>
-            <h2 data-reveal>Genesis Home Appliances <span class="accent">—</span><br/>software that pulled its weight.</h2>
+            <p class="case-meta-tag">/ 02 — Retail · Pricing, sales site &amp; POS</p>
+            <h2 data-reveal>Genesis Home Appliances <span class="accent">—</span><br/>priced sharp, sold fast.</h2>
           </div>
           <p data-reveal style="max-width: 44ch;">
-            A growing white-goods retailer needed business-critical
-            software built around how they actually trade — not another
-            off-the-shelf system they'd have to bend their business to fit.
+            A growing white-goods retailer needed to price competitively
+            without trawling rivals by hand, and to sell faster on the
+            shop floor with a system built around how their staff
+            actually work.
           </p>
         </div>
 
         <div class="case-visual dark" data-reveal>
-          <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-label="Abstract data visualisation">
+          <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-label="Pricing engine and competitor scraping illustration">
             <rect width="800" height="450" fill="#0D1117"/>
             <!-- Mountain silhouette echo -->
             <polygon fill="#1F3328" points="0,450 0,360 120,290 260,330 380,240 510,310 640,255 800,300 800,450"/>
             <polygon fill="#2D4837" points="0,450 0,410 160,370 320,395 480,365 640,395 800,375 800,450"/>
-            <!-- Data lines / chart abstraction -->
-            <g stroke="#D9A867" stroke-width="2.5" fill="none" opacity="0.9">
-              <polyline points="80,250 180,210 260,230 360,170 440,195 540,140 640,165 720,110"/>
+
+            <!-- Competitor price tags being scraped (left side) -->
+            <g font-family="ui-monospace, monospace" font-size="11" fill="#B5C2BD">
+              <rect x="60" y="80" width="90" height="28" rx="4" fill="#1A2D22" stroke="#3D6750" stroke-width="1"/>
+              <text x="72" y="98">£449.99</text>
+              <rect x="60" y="118" width="90" height="28" rx="4" fill="#1A2D22" stroke="#3D6750" stroke-width="1"/>
+              <text x="72" y="136">£429.00</text>
+              <rect x="60" y="156" width="90" height="28" rx="4" fill="#1A2D22" stroke="#3D6750" stroke-width="1"/>
+              <text x="72" y="174">£399.50</text>
+              <rect x="60" y="194" width="90" height="28" rx="4" fill="#1A2D22" stroke="#3D6750" stroke-width="1"/>
+              <text x="72" y="212">£465.00</text>
             </g>
-            <g stroke="#3D6750" stroke-width="2" fill="none" opacity="0.75">
-              <polyline points="80,290 180,265 260,275 360,235 440,250 540,210 640,225 720,185"/>
+
+            <!-- Arrow flowing into pricing engine -->
+            <g stroke="#D9A867" stroke-width="2" fill="none" opacity="0.9">
+              <path d="M160,160 Q230,140 290,160" marker-end="url(#arrow)"/>
             </g>
-            <!-- Glyph dots -->
-            <circle cx="180" cy="210" r="4" fill="#D9A867"/>
-            <circle cx="360" cy="170" r="4" fill="#D9A867"/>
-            <circle cx="540" cy="140" r="4" fill="#D9A867"/>
-            <circle cx="720" cy="110" r="4" fill="#D9A867"/>
-            <!-- Python-style brackets in corner -->
-            <text x="60" y="100" font-family="ui-monospace, monospace" font-size="22" fill="#D9A867" opacity="0.6">{ python }</text>
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M0,0 L10,5 L0,10 z" fill="#D9A867"/>
+              </marker>
+            </defs>
+
+            <!-- Pricing engine box (centre) -->
+            <rect x="290" y="115" width="220" height="100" rx="8" fill="#1F3328" stroke="#D9A867" stroke-width="1.5"/>
+            <text x="400" y="148" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="18" font-weight="500" fill="#F7F4EA">Pricing engine</text>
+            <text x="400" y="172" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#B5C2BD">scrape · compare · price</text>
+            <text x="400" y="194" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#D9A867">£ → £</text>
+
+            <!-- Output arrow to in-store site / POS -->
+            <g stroke="#D9A867" stroke-width="2" fill="none" opacity="0.9">
+              <path d="M510,165 Q580,150 640,165" marker-end="url(#arrow)"/>
+            </g>
+
+            <!-- In-store sales site / POS device on right -->
+            <g>
+              <!-- POS terminal frame -->
+              <rect x="640" y="115" width="100" height="105" rx="6" fill="#1F3328" stroke="#3D6750" stroke-width="1.5"/>
+              <rect x="648" y="123" width="84" height="60" rx="3" fill="#0D1117"/>
+              <text x="690" y="143" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#D9A867">SALES</text>
+              <text x="690" y="160" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#B5C2BD">£399</text>
+              <text x="690" y="175" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" fill="#3D6750">───────</text>
+              <!-- Card slot -->
+              <rect x="660" y="195" width="60" height="4" rx="1" fill="#3D6750"/>
+            </g>
+
+            <!-- Chart line under it all -->
+            <g stroke="#3D6750" stroke-width="1.5" fill="none" opacity="0.6">
+              <polyline points="60,330 180,310 300,320 420,290 540,300 660,275 740,280"/>
+            </g>
+            <g fill="#D9A867" opacity="0.85">
+              <circle cx="180" cy="310" r="3"/>
+              <circle cx="300" cy="320" r="3"/>
+              <circle cx="420" cy="290" r="3"/>
+              <circle cx="540" cy="300" r="3"/>
+              <circle cx="660" cy="275" r="3"/>
+            </g>
+
+            <!-- Python label corner -->
+            <text x="60" y="60" font-family="ui-monospace, monospace" font-size="13" fill="#D9A867" opacity="0.7">{ python · scraping · web · POS }</text>
           </svg>
         </div>
 
@@ -182,48 +229,56 @@
             </div>
             <div>
               <dt>Scope</dt>
-              <dd>Custom business-critical software</dd>
+              <dd>Pricing engine · in-store sales site · POS device</dd>
             </div>
             <div>
               <dt>Built with</dt>
-              <dd>Python · custom integrations</dd>
+              <dd>Python · web scraping · custom POS hardware integration</dd>
             </div>
             <div>
               <dt>Outcome</dt>
-              <dd>Real, measurable business results</dd>
+              <dd>Sharper pricing, faster sales floor</dd>
             </div>
           </dl>
 
           <div class="case-text" data-reveal>
             <p>
               Genesis is a growing white-goods retailer running serious
-              volume. The problem was the usual one for a business at
-              that stage: the off-the-shelf tools couldn't keep up,
-              spreadsheets had multiplied, and the people running the
-              place were spending too much time wrangling systems instead
-              of selling appliances.
+              volume. Two problems were eating into the business: pricing
+              competitively across hundreds of SKUs meant somebody
+              manually checking competitor sites every day, and the
+              shop-floor sales process was slow because the systems they
+              had didn't really suit how the team worked.
             </p>
             <p>
-              I built business-critical custom software in Python,
-              designed around how Genesis actually operates day to day.
-              Specific to their workflows, integrated where it needed to
-              be, and replacing the bits of the operation where manual
-              effort was costing real money.
+              I built a pricing engine in Python that scrapes competitor
+              listings on a schedule, compares them against Genesis's
+              own catalogue, and surfaces the products that need a
+              price change to stay competitive. What used to take half
+              a person's morning now runs by itself overnight.
+            </p>
+            <p>
+              On top of that I built a custom internal sales website
+              for staff to use in the showroom, paired with a POS device
+              for taking payment on the spot. Same brand, same data,
+              same prices — coming straight from the pricing engine.
+              Staff can quote, sell and take payment in one flow, with
+              none of the off-the-shelf clutter.
             </p>
             <p>
               The result was a great business outcome — the kind you can
-              point at on a P&amp;L. Faster operations, fewer mistakes,
-              and the team freed up to focus on the parts of the
-              business that matter most.
+              point at on a P&amp;L. Sharper pricing where it mattered,
+              faster sales on the floor, and the team freed up to focus
+              on the parts of the business that matter most.
             </p>
 
             <div class="aside-card">
               <p class="lbl">For clarity</p>
               <p>
-                Skiddaw Digital built the internal Python software for
-                Genesis only — <strong>not</strong> their public website.
-                And the ERP system below is a completely separate piece
-                of work, unrelated to Genesis.
+                Skiddaw Digital built the internal pricing engine, sales
+                site and POS for Genesis — <strong>not</strong> their
+                public website. And the ERP system below is a completely
+                separate piece of work, unrelated to Genesis.
               </p>
             </div>
           </div>
@@ -351,7 +406,7 @@
           Could be <span class="accent">yours.</span>
         </h2>
         <p class="lead" data-reveal style="margin: 0 auto 2rem; max-width: 50ch;">
-          If you run a Cumbrian business and need a website or some real
+          If you run a West Cumbrian business and need a website or some real
           software building — I'd love to hear what you're up to.
         </p>
         <a href="contact.html" class="btn btn-accent">Start a project <span class="arrow">→</span></a>
@@ -366,7 +421,7 @@
         <div class="footer-brand">
           <h3>skiddaw<span class="digital">.digital</span></h3>
           <p>
-            Websites and custom software for Cumbrian small and medium
+            Websites and custom software for West Cumbrian small and medium
             businesses. Built in the Lakes, built to last.
           </p>
         </div>
@@ -390,7 +445,7 @@
         <div class="footer-col">
           <h4>Based</h4>
           <ul>
-            <li>Cumbria, UK</li>
+            <li>West Cumbria, UK</li>
             <li>The Lake District</li>
             <li>Working remotely &amp; in-person</li>
           </ul>

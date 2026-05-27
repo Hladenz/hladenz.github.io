@@ -537,6 +537,95 @@ p strong { color: var(--ink); font-weight: 600; }
 }
 
 /* =========================================================
+   "Also offering" strip — secondary services on home
+   ========================================================= */
+
+.svc-also {
+  margin-top: clamp(3rem, 5vw, 4.5rem);
+  padding-top: clamp(2.5rem, 4vw, 3.5rem);
+  border-top: 1px solid var(--stone-200);
+}
+
+.svc-also-head {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.svc-also-head::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--slate);
+}
+
+.svc-also-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .svc-also-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.also-card {
+  background: transparent;
+  border: 1px solid var(--stone-200);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  color: var(--ink);
+  transition: transform 0.22s ease, border-color 0.2s, background 0.2s;
+}
+
+.also-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--fell);
+  background: var(--stone-100);
+}
+
+.also-card .ico {
+  width: 30px;
+  height: 30px;
+  color: var(--fell);
+  margin-bottom: 0.25rem;
+}
+
+.also-card .ico svg { width: 100%; height: 100%; }
+
+.also-card h4 {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.also-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--slate);
+  flex-grow: 1;
+}
+
+.also-card .more {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--fell);
+  letter-spacing: 0.04em;
+  margin-top: 0.35rem;
+}
+
+/* =========================================================
    Featured work rows
    ========================================================= */
 

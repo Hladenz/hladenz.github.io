@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Skiddaw Digital</title>
-  <meta name="description" content="Get in touch about a website, custom software project, or the white-goods ERP system." />
+  <meta name="description" content="Get in touch about a website, custom software project, Microsoft 365 setup, a till, or the white-goods ERP system." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -70,11 +70,7 @@
             </div>
             <div class="contact-block">
               <div class="lbl">Based</div>
-              <div class="val">Cumbria · The Lake District</div>
-            </div>
-            <div class="contact-block">
-              <div class="lbl">Working hours</div>
-              <div class="val">Mon–Fri · evenings on request</div>
+              <div class="val">West Cumbria · The Lake District</div>
             </div>
 
             <div style="margin-top: 2.5rem; padding: 1.75rem; border: 1px solid var(--stone-200); border-radius: var(--radius-lg); background: var(--stone-100);">
@@ -82,10 +78,9 @@
                 Prefer to meet?
               </p>
               <p style="font-size: 0.95rem; color: var(--slate); line-height: 1.55;">
-                If you're a Cumbrian business and want to meet face to
-                face, I'm happy to come to you. Anywhere in the Lakes,
-                West Cumbria, Eden Valley, or thereabouts. No charge for
-                a first conversation.
+                If you're a West Cumbrian business and want to meet face
+                to face, I'm happy to come to you. Anywhere in the Lakes
+                or West Cumbria. No charge for a first conversation.
               </p>
             </div>
 
@@ -97,15 +92,25 @@
           <div data-reveal>
             <p class="section-tag">Or send a note</p>
             <!--
-              FORM SETUP NOTE:
-              Replace action="#" below with your form endpoint.
-              Easy options for a static site:
-                · Formspree:  https://formspree.io   (free tier, paste your form URL)
-                · Web3Forms:  https://web3forms.com  (free, no signup)
-                · Basin:      https://usebasin.com
-                · Netlify Forms — add the `netlify` attribute if hosting on Netlify
+              ============================================================
+              WEB3FORMS — paste your access key in the hidden input below.
+              Sign up free at https://web3forms.com and copy your key.
+              The honeypot "botcheck" input below catches most spam bots.
+              No backend required — submissions land in your email.
+              ============================================================
             -->
-            <form class="form" action="#" method="POST">
+            <form class="form" action="https://api.web3forms.com/submit" method="POST">
+
+              <!-- Replace with your Web3Forms access key -->
+              <input type="hidden" name="access_key" value="YOUR-WEB3FORMS-ACCESS-KEY">
+
+              <!-- These hidden fields shape the email you receive -->
+              <input type="hidden" name="subject" value="New enquiry — skiddaw.digital">
+              <input type="hidden" name="from_name" value="Skiddaw Digital website">
+
+              <!-- Honeypot — bots fill it, humans don't see it. Submissions with this filled are rejected. -->
+              <input type="checkbox" name="botcheck" style="display: none;" tabindex="-1" autocomplete="off">
+
               <div class="field">
                 <label for="name">Your name</label>
                 <input id="name" name="name" type="text" required autocomplete="name" />
@@ -124,8 +129,10 @@
                   <option>A new website</option>
                   <option>Care plan / fixing an existing site</option>
                   <option>Custom software / integration</option>
+                  <option>Microsoft 365 / business email</option>
+                  <option>A till / POS system</option>
+                  <option>General IT help</option>
                   <option>White-goods ERP demo</option>
-                  <option>Business email / Microsoft 365</option>
                   <option>Just a question</option>
                 </select>
               </div>
@@ -150,7 +157,7 @@
         <div class="footer-brand">
           <h3>skiddaw<span class="digital">.digital</span></h3>
           <p>
-            Websites and custom software for Cumbrian small and medium
+            Websites and custom software for West Cumbrian small and medium
             businesses. Built in the Lakes, built to last.
           </p>
         </div>
@@ -174,7 +181,7 @@
         <div class="footer-col">
           <h4>Based</h4>
           <ul>
-            <li>Cumbria, UK</li>
+            <li>West Cumbria, UK</li>
             <li>The Lake District</li>
             <li>Working remotely &amp; in-person</li>
           </ul>
