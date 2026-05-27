@@ -1,6 +1,6 @@
 /* =========================================================
    Skiddaw Digital
-   Modern stylesheet — low-poly mountain identity
+   Modern stylesheetlow-poly mountain identity
    ========================================================= */
 
 :root {
@@ -29,7 +29,7 @@
   --sun:          #D9A867;   /* heather/sunset, single warm accent */
 
   /* === Brand accents (used sparingly) === */
-  --fell:         #2D4837;   /* primary accent — deep fell green */
+  --fell:         #2D4837;   /* primary accentdeep fell green */
   --fell-bright:  #3D6750;
   --fell-deep:    #1F3328;
   --heather:      #C97A3F;   /* secondary accent, autumn fells */
@@ -537,7 +537,7 @@ p strong { color: var(--ink); font-weight: 600; }
 }
 
 /* =========================================================
-   "Also offering" strip — secondary services on home
+   "Also offering" stripsecondary services on home
    ========================================================= */
 
 .svc-also {
