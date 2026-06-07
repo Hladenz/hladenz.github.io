@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGELB82WRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EGELB82WRL');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Skiddaw Digital</title>
@@ -97,7 +105,7 @@
           <div data-reveal>
             <p class="section-tag">Or send a note</p>
 
-            <form class="form" action="https://api.web3forms.com/submit" method="POST">
+            <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
 
               <!-- Replace with your Web3Forms access key -->
               <input type="hidden" name="access_key" value="e9c1f253-c0af-44bd-a715-570f56dda13b">
@@ -139,6 +147,7 @@
               </div>
               <button type="submit" class="btn btn-primary">Send message <span class="arrow">→</span></button>
               <p class="form-note">I'll reply within one working day.</p>
+              <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
             </form>
           </div>
 
