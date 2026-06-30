@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextERP — Home Appliance ERP built for retailers who just want it to work</title>
+  <meta name="description" content="NextERP is a complete ERP system built specifically for white and brown goods retailers. Sales, stock, purchasing, deliveries, service jobs and reporting — all in one place. Simple enough to run yourself, powerful enough to grow with you." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* =====================================================
+       NEXTERP PAGE — High-end animation layer
+       ===================================================== */
+
+    :root {
+      --ease-out-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-out-quart:  cubic-bezier(0.25, 1, 0.5, 1);
+      --duration-mid:    0.65s;
+      --duration-slow:   1.1s;
+    }
+
+    /* =====================================================
+       REVEAL SYSTEM
+       ===================================================== */
+
+    .erp-reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity var(--duration-slow) var(--ease-out-expo),
+                  transform var(--duration-slow) var(--ease-out-expo);
+      will-change: opacity, transform;
+    }
+    .erp-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .erp-stagger > * {
+      opacity: 0;
+      transform: translateY(28px) scale(0.97);
+      transition: opacity var(--duration-slow) var(--ease-out-expo),
+                  transform var(--duration-slow) var(--ease-out-expo);
+      will-change: opacity, transform;
+    }
+    .erp-stagger.visible > * { opacity: 1; transform: translateY(0) scale(1); }
+    .erp-stagger.visible > *:nth-child(1)  { transition-delay: 0.00s; }
+    .erp-stagger.visible > *:nth-child(2)  { transition-delay: 0.07s; }
+    .erp-stagger.visible > *:nth-child(3)  { transition-delay: 0.14s; }
+    .erp-stagger.visible > *:nth-child(4)  { transition-delay: 0.21s; }
+    .erp-stagger.visible > *:nth-child(5)  { transition-delay: 0.28s; }
+    .erp-stagger.visible > *:nth-child(6)  { transition-delay: 0.35s; }
+    .erp-stagger.visible > *:nth-child(7)  { transition-delay: 0.42s; }
+    .erp-stagger.visible > *:nth-child(8)  { transition-delay: 0.49s; }
+    .erp-stagger.visible > *:nth-child(9)  { transition-delay: 0.56s; }
+    .erp-stagger.visible > *:nth-child(10) { transition-delay: 0.63s; }
+    .erp-stagger.visible > *:nth-child(11) { transition-delay: 0.70s; }
+    .erp-stagger.visible > *:nth-child(12) { transition-delay: 0.77s; }
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero-kicker {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: slideUp var(--duration-mid) var(--ease-out-expo) 0.1s forwards;
+    }
+    .hero-h1-wrap {
+      opacity: 0;
+      transform: translateY(22px);
+      animation: slideUp var(--duration-slow) var(--ease-out-expo) 0.25s forwards;
+    }
+    .hero-meta-wrap {
+      opacity: 0;
+      transform: translateY(22px);
+      animation: slideUp var(--duration-slow) var(--ease-out-expo) 0.45s forwards;
+    }
+    @keyframes slideUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Parallax layers */
+    .mountain-parallax {
+      position: relative;
+      width: 100%;
+      height: clamp(220px, 34vw, 460px);
+      overflow: hidden;
+    }
+    .mtn-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      will-change: transform;
+    }
+    .mtn-layer svg { width: 100%; height: 100%; }
+
+    /* Animated marquee strap */
+    .elev-strap { overflow: hidden; }
+    .elev-strap-inner {
+      display: flex;
+      gap: 2rem;
+      padding: 0.65rem var(--gutter);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: #a8c4b0;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      animation: marquee 28s linear infinite;
+      width: max-content;
+    }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Licence badge */
+    .licence-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--fell);
+      background: rgba(45,72,55,0.08);
+      border: 1px solid rgba(45,72,55,0.2);
+      border-radius: 100px;
+      padding: 0.3em 0.9em;
+      margin-bottom: 1.25rem;
+      animation: badgePop 0.6s var(--ease-out-expo) 0.6s backwards;
+    }
+    .licence-badge .badge-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--fell);
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes badgePop {
+      from { opacity: 0; transform: translateY(10px) scale(0.9); }
+      to   { opacity: 1; transform: translateY(0)   scale(1);   }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; } 50% { opacity: 0.25; }
+    }
+
+    /* =====================================================
+       ANIMATED UNDERLINE
+       ===================================================== */
+
+    .underline-anim {
+      position: relative;
+      display: inline;
+    }
+    .underline-anim::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -3px;
+      width: 0; height: 3px;
+      background: var(--sun);
+      border-radius: 2px;
+      transition: width 1s var(--ease-out-expo);
+    }
+    .underline-anim.visible::after { width: 100%; }
+
+    /* Section line */
+    .section-line {
+      width: 48px; height: 3px;
+      background: var(--fell);
+      border-radius: 2px;
+      margin: 0 0 0.75rem;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.8s var(--ease-out-expo);
+    }
+    .section-line.visible { transform: scaleX(1); }
+
+    /* =====================================================
+       STATS STRIP
+       ===================================================== */
+
+    .stats-strip {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+      border: 1px solid var(--stone-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .stat-item {
+      flex: 1 1 180px;
+      padding: 2rem 1.75rem;
+      border-right: 1px solid var(--stone-200);
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-item::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, transparent 40%, rgba(45,72,55,0.04) 100%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .stat-item:hover::after { opacity: 1; }
+    .stat-num {
+      font-family: var(--display);
+      font-size: clamp(2rem, 4.5vw, 3.25rem);
+      font-weight: 700;
+      color: var(--fell);
+      line-height: 1;
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--slate);
+      margin-top: 0.4rem;
+      display: block;
+      line-height: 1.4;
+    }
+    @media (max-width: 720px) {
+      .stat-item { border-right: none; border-bottom: 1px solid var(--stone-200); }
+      .stat-item:last-child { border-bottom: none; }
+    }
+
+    /* =====================================================
+       SIMPLICITY BOX
+       ===================================================== */
+
+    .simplicity-box {
+      background: var(--fell);
+      background-image: radial-gradient(ellipse at 80% 10%, #3d6750 0%, transparent 60%),
+                        radial-gradient(ellipse at 10% 90%, #1f3328 0%, transparent 55%);
+      color: var(--stone-100);
+      border-radius: var(--radius-lg);
+      padding: clamp(2rem, 5vw, 3.5rem);
+      margin-top: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .simplicity-box::before {
+      content: '';
+      position: absolute; inset: -1px;
+      border-radius: inherit;
+      border: 1px solid rgba(255,255,255,0.08);
+      pointer-events: none;
+    }
+    .simplicity-box::after {
+      content: '';
+      position: absolute;
+      top: -50%; right: -30%;
+      width: 60%; height: 200%;
+      background: radial-gradient(ellipse, rgba(217,168,103,0.08) 0%, transparent 70%);
+      animation: driftGlow 8s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+    @keyframes driftGlow {
+      from { transform: translateX(0) translateY(0) rotate(-5deg); }
+      to   { transform: translateX(-8%) translateY(6%) rotate(5deg); }
+    }
+    .simplicity-box h3 {
+      font-family: var(--display);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      color: var(--stone-100);
+      position: relative; z-index: 1;
+    }
+    .simplicity-box p {
+      color: #a8c4b0;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      max-width: 56ch;
+      position: relative; z-index: 1;
+    }
+    .sun-accent { color: var(--sun); }
+
+    .point-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem 2rem;
+      position: relative; z-index: 1;
+    }
+    .point-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      color: #a8c4b0;
+      line-height: 1.45;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: opacity 0.5s var(--ease-out-expo),
+                  transform 0.5s var(--ease-out-expo),
+                  color 0.2s;
+    }
+    .point-list li:hover { color: var(--stone-100); }
+    .point-list li::before {
+      content: '▲';
+      color: var(--sun);
+      font-size: 0.6rem;
+      margin-top: 0.38em;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .point-list li:hover::before { transform: translateY(-2px); }
+    .point-list.animated li { opacity: 1; transform: translateX(0); }
+    .point-list.animated li:nth-child(1)  { transition-delay: 0.05s; }
+    .point-list.animated li:nth-child(2)  { transition-delay: 0.10s; }
+    .point-list.animated li:nth-child(3)  { transition-delay: 0.15s; }
+    .point-list.animated li:nth-child(4)  { transition-delay: 0.20s; }
+    .point-list.animated li:nth-child(5)  { transition-delay: 0.25s; }
+    .point-list.animated li:nth-child(6)  { transition-delay: 0.30s; }
+    .point-list.animated li:nth-child(7)  { transition-delay: 0.35s; }
+    .point-list.animated li:nth-child(8)  { transition-delay: 0.40s; }
+
+    /* =====================================================
+       MODULE GRID — 3-D card tilt
+       ===================================================== */
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 3rem;
+      perspective: 1200px;
+    }
+    .module-card {
+      background: var(--stone-100);
+      border: 1px solid var(--stone-200);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+      transform-style: preserve-3d;
+      transition: border-color 0.25s, box-shadow 0.35s,
+                  transform 0.12s var(--ease-out-quart);
+    }
+    .module-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%),
+                  rgba(45,72,55,0.07) 0%, transparent 65%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      border-radius: inherit;
+    }
+    .module-card:hover::before { opacity: 1; }
+    .module-card:hover {
+      border-color: var(--fell);
+      box-shadow: 0 8px 32px rgba(45,72,55,0.13), 0 2px 8px rgba(45,72,55,0.07);
+    }
+    .module-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--fell), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .module-card:hover::after { opacity: 0.6; }
+    .module-card .ico {
+      width: 36px; height: 36px;
+      color: var(--fell);
+      transition: transform 0.3s var(--ease-out-expo);
+    }
+    .module-card:hover .ico { transform: translateY(-3px) scale(1.1); }
+    .module-card h3 {
+      font-family: var(--display);
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0;
+    }
+    .module-card p {
+      font-size: 0.87rem;
+      color: var(--slate);
+      line-height: 1.5;
+      margin: 0;
+    }
+    .feat-tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: var(--stone-200);
+      color: var(--slate);
+      border-radius: 4px;
+      padding: 0.18em 0.5em;
+      margin: 0 0.2rem 0.3rem 0;
+      transition: background 0.2s, color 0.2s;
+    }
+    .module-card:hover .feat-tag {
+      background: rgba(45,72,55,0.09);
+      color: var(--fell);
+    }
+
+    /* =====================================================
+       SCALE GRID
+       ===================================================== */
+
+    .scale-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 720px) { .scale-grid { grid-template-columns: 1fr; } }
+    .scale-card {
+      border: 1px solid var(--stone-200);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      background: var(--stone-100);
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.35s var(--ease-out-expo);
+    }
+    .scale-card:hover {
+      border-color: var(--fell);
+      box-shadow: 0 6px 28px rgba(45,72,55,0.10);
+      transform: translateY(-4px);
+    }
+    .scale-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--slate-2);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .scale-card h3 {
+      font-family: var(--display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .scale-card ul {
+      list-style: none; padding: 0;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .scale-card ul li {
+      font-size: 0.92rem;
+      color: var(--slate);
+      display: flex; align-items: flex-start; gap: 0.55rem;
+      line-height: 1.4;
+    }
+    .scale-card ul li::before {
+      content: '→';
+      color: var(--fell);
+      font-size: 0.78rem;
+      margin-top: 0.1em;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .scale-card:hover ul li::before { transform: translateX(3px); }
+
+    /* =====================================================
+       PULL QUOTE
+       ===================================================== */
+
+    .pull-quote {
+      border-left: 3px solid var(--fell);
+      padding-left: 1.5rem;
+      margin: 2.5rem 0 0;
+      position: relative;
+    }
+    .pull-quote::before {
+      content: '"';
+      position: absolute;
+      top: -0.5rem; left: -0.1rem;
+      font-size: 4rem;
+      color: var(--fell);
+      opacity: 0.12;
+      font-family: var(--display);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .pull-quote p {
+      font-family: var(--display);
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      font-weight: 500;
+      color: var(--ink-2);
+      line-height: 1.45;
+      font-style: italic;
+    }
+    .pull-quote cite {
+      display: block;
+      margin-top: 0.6rem;
+      font-size: 0.84rem;
+      color: var(--slate);
+      font-style: normal;
+    }
+
+    /* =====================================================
+       DARK MARQUEE BAR
+       ===================================================== */
+
+    .marquee-bar {
+      background: var(--ink);
+      overflow: hidden;
+      border-top: 1px solid var(--ink-2);
+      border-bottom: 1px solid var(--ink-2);
+    }
+    .marquee-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: marquee 22s linear infinite;
+      padding: 0.75rem 0;
+    }
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 0 2.5rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6b7480;
+      white-space: nowrap;
+      border-right: 1px solid #1f2937;
+    }
+    .marquee-item .dot-accent {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--fell-bright);
+      flex-shrink: 0;
+    }
+
+    /* =====================================================
+       WORK ROWS
+       ===================================================== */
+
+    .erp-work-row {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--stone-200);
+      position: relative;
+      overflow: hidden;
+      transition: padding-left 0.3s var(--ease-out-expo);
+    }
+    .erp-work-row::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: var(--stone-100);
+      transform: translateX(-101%);
+      transition: transform 0.35s var(--ease-out-expo);
+      z-index: 0;
+    }
+    .erp-work-row:hover::before { transform: translateX(0); }
+    .erp-work-row > * { position: relative; z-index: 1; }
+    .erp-work-row .num {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--slate-2);
+      min-width: 28px;
+      letter-spacing: 0.04em;
+    }
+    .erp-work-row h3 {
+      font-family: var(--display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0;
+      flex: 1;
+    }
+    .erp-work-row p { font-size: 0.88rem; color: var(--slate); margin: 0; flex: 2; }
+    .erp-work-row .arrow-r {
+      font-size: 0.85rem;
+      color: var(--fell);
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity 0.25s, transform 0.3s var(--ease-out-expo);
+    }
+    .erp-work-row:hover .arrow-r { opacity: 1; transform: translateX(0); }
+    @media (max-width: 720px) {
+      .erp-work-row { flex-wrap: wrap; }
+      .erp-work-row p { flex-basis: 100%; }
+    }
+
+    /* =====================================================
+       CTA BANNER
+       ===================================================== */
+
+    .cta-banner {
+      position: relative;
+      background: var(--fell-deep);
+      overflow: hidden;
+      padding: clamp(4rem, 8vw, 7rem) 0;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 60% 0%, rgba(61,103,80,0.45) 0%, transparent 60%),
+                  radial-gradient(ellipse at 10% 100%, rgba(31,51,40,0.6) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .cta-mtn {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    .cta-banner .container { position: relative; z-index: 1; }
+    .cta-banner h2 {
+      font-family: var(--display);
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--stone-100);
+      margin: 0.75rem 0 1rem;
+    }
+    .cta-banner h2 .accent { color: var(--sun); }
+    .cta-banner p { color: #a8c4b0; max-width: 52ch; font-size: 1.05rem; line-height: 1.6; }
+    .cta-banner .kicker { color: var(--sun); }
+    .cta-banner .dot { background: var(--sun); }
+    .cta-banner .cta-row { margin-top: 2rem; }
+    .btn-pulse { position: relative; }
+    .btn-pulse::before {
+      content: '';
+      position: absolute; inset: -6px;
+      border: 2px solid var(--sun);
+      border-radius: 8px;
+      opacity: 0;
+      animation: pulseRing 2.8s ease-out infinite;
+    }
+    @keyframes pulseRing {
+      0%   { opacity: 0; transform: scale(0.94); }
+      30%  { opacity: 0.45; }
+      100% { opacity: 0; transform: scale(1.08); }
+    }
+
+    /* =====================================================
+       REDUCE MOTION
+       ===================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      .elev-strap-inner, .marquee-track { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <svg class="logo-mark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="1,21 8,9 13,16 18,7 23,21" fill="#2D4837"/>
+          <polygon points="8,9 13,16 11,21 1,21" fill="#1F3328"/>
+          <circle cx="19" cy="5" r="2" fill="#D9A867"/>
+        </svg>
+        <span>skiddaw<span class="digital">.digital</span></span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in touch</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-kicker">
+          <span class="licence-badge">
+            <span class="badge-dot"></span>
+            Available to licence
+          </span>
+          <p class="kicker"><span class="dot"></span> Home Appliance ERP · White &amp; Brown Goods</p>
+        </div>
+        <div class="hero-grid">
+          <h1 class="display-xl hero-h1-wrap">
+            The ERP built for <span class="accent">appliance</span> retail.
+          </h1>
+          <div class="hero-meta hero-meta-wrap">
+            <p class="hero-lead">
+              Sales, stock, purchasing, deliveries, service jobs and
+              reporting — all in one place. Built by someone who has worked
+              in the white and brown goods industry and knows exactly how
+              these businesses operate. Simple enough to run yourself from
+              day one. No management contracts. No per-seat fees.
+            </p>
+            <div class="cta-row">
+              <a href="contact.html" class="btn btn-primary btn-pulse">Talk to us about a licence <span class="arrow">→</span></a>
+              <a href="#modules" class="btn btn-ghost">See what's included</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Parallax mountain — 4 depth layers -->
+      <div class="mountain-parallax" id="heroMtn">
+        <div class="mtn-layer" data-depth="0" style="z-index:0;">
+          <svg viewBox="0 0 1600 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+            <rect width="1600" height="460" fill="#E4E8E3"/>
+            <circle cx="1295" cy="135" r="60" fill="#D9A867"/>
+          </svg>
+        </div>
+        <div class="mtn-layer" data-depth="0.04" style="z-index:1;">
+          <svg viewBox="0 0 1600 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+            <polygon fill="#B5C2BD" points="0,360 90,290 200,340 320,265 440,325 560,265 680,320 800,260 920,310 1040,260 1160,310 1280,270 1400,310 1520,290 1600,310 1600,460 0,460"/>
+          </svg>
+        </div>
+        <div class="mtn-layer" data-depth="0.09" style="z-index:2;">
+          <svg viewBox="0 0 1600 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+            <polygon fill="#758678" points="0,400 130,330 280,385 410,310 550,375 700,315 830,365 950,320 1080,355 1200,315 1340,355 1480,320 1600,335 1600,460 0,460"/>
+            <polygon fill="#4A6855" points="60,460 200,265 200,460"/>
+            <polygon fill="#2D4837" points="200,265 200,460 350,460"/>
+          </svg>
+        </div>
+        <div class="mtn-layer" data-depth="0.16" style="z-index:3;">
+          <svg viewBox="0 0 1600 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+            <polygon fill="#3D5A48" points="280,460 600,75 600,460"/>
+            <polygon fill="#233D2E" points="600,75 600,460 940,460"/>
+            <polygon fill="#F7F4EA" points="568,150 600,75 632,150 622,178 610,162 600,168 588,162 578,178"/>
+            <polygon fill="#4A6855" points="870,460 1050,225 1050,460"/>
+            <polygon fill="#2D4837" points="1050,225 1050,460 1230,460"/>
+            <polygon fill="#3D5A48" points="1180,460 1320,295 1320,460"/>
+            <polygon fill="#233D2E" points="1320,295 1320,460 1460,460"/>
+            <polygon fill="#4A6855" points="1430,460 1530,355 1600,400 1600,460"/>
+          </svg>
+        </div>
+        <div class="mtn-layer" data-depth="0.26" style="z-index:4;">
+          <svg viewBox="0 0 1600 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+            <polygon fill="#1A2D22" points="0,460 0,425 140,400 290,420 430,395 570,425 720,400 850,425 990,400 1120,425 1260,400 1400,425 1530,405 1600,425 1600,460"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Animated ticker strap -->
+      <div class="elev-strap" style="background:var(--fell-deep);">
+        <div class="elev-strap-inner">
+          <span><span style="color:var(--sun)">▲</span> NextERP · Home Appliance Edition</span>
+          <span>·</span><span>Sales &amp; Invoicing</span>
+          <span>·</span><span>Stock Management</span>
+          <span>·</span><span>Purchasing &amp; Goods-in</span>
+          <span>·</span><span>Delivery Routes</span>
+          <span>·</span><span>Driver App</span>
+          <span>·</span><span>Service &amp; Repairs</span>
+          <span>·</span><span>Customer Ledger</span>
+          <span>·</span><span>Opayo Payments</span>
+          <span>·</span><span>Reporting &amp; Audit</span>
+          <span>·</span>
+          <!-- duplicate for seamless loop -->
+          <span><span style="color:var(--sun)">▲</span> NextERP · Home Appliance Edition</span>
+          <span>·</span><span>Sales &amp; Invoicing</span>
+          <span>·</span><span>Stock Management</span>
+          <span>·</span><span>Purchasing &amp; Goods-in</span>
+          <span>·</span><span>Delivery Routes</span>
+          <span>·</span><span>Driver App</span>
+          <span>·</span><span>Service &amp; Repairs</span>
+          <span>·</span><span>Customer Ledger</span>
+          <span>·</span><span>Opayo Payments</span>
+          <span>·</span><span>Reporting &amp; Audit</span>
+          <span>·</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Simplicity ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="split-head">
+          <div>
+            <div class="section-line erp-reveal"></div>
+            <p class="section-tag">01 / The point</p>
+            <h2 class="display-l erp-reveal">
+              So simple you<br/><span class="accent underline-anim">run it yourself.</span>
+            </h2>
+          </div>
+          <p class="lead lead-wide erp-reveal">
+            Most ERPs need a consultant to change a setting. NextERP
+            doesn't. Every part of the system was designed for the
+            people who actually use it — not for IT departments. If you
+            can use a browser, you can manage NextERP. No admin theme.
+            No hidden layer. No complexity for complexity's sake.
+          </p>
+        </div>
+
+        <div class="stats-strip erp-stagger">
+          <div class="stat-item">
+            <span class="stat-num" data-count-to="0">0</span>
+            <span class="stat-label">Management contracts required</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-count-to="1">1</span>
+            <span class="stat-label">System for sales, stock, deliveries &amp; service</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-symbol="∞">∞</span>
+            <span class="stat-label">Users — no per-seat fees, ever</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-count-to="100" data-suffix="%">100%</span>
+            <span class="stat-label">Purpose-built for appliance retail — not adapted</span>
+          </div>
+        </div>
+
+        <div class="simplicity-box erp-reveal">
+          <h3>No management themes.<br/><span class="sun-accent">No hidden complexity.</span></h3>
+          <p>
+            There's no separate admin layer to learn, no consultancy days baked in,
+            and no settings buried five menus deep. Adding products, updating prices,
+            managing staff access, configuring notifications — all done through the same
+            clean interface your team uses every day. What you see is what you manage.
+          </p>
+          <ul class="point-list">
+            <li>Add &amp; edit products in seconds</li>
+            <li>Update pricing without a consultant</li>
+            <li>Manage staff logins &amp; permissions yourself</li>
+            <li>Run reports without any training</li>
+            <li>Connect your Opayo card terminal yourself</li>
+            <li>Edit document templates in the browser</li>
+            <li>Configure email notifications without code</li>
+            <li>Backup and restore with one click</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Dark feature marquee ===== -->
+    <div class="marquee-bar" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-item"><span class="dot-accent"></span>Sales Till</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Stock Control</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Purchase Orders</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Goods In</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Customer Accounts</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Delivery Routing</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Driver App</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Service Jobs</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Opayo Payments</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Pricing Engine</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Rebate Management</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Audit Log</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Reports &amp; Dashboard</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Email Templates</div>
+        <div class="marquee-item"><span class="dot-accent"></span>PDF Documents</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Gift Cards</div>
+        <!-- duplicate -->
+        <div class="marquee-item"><span class="dot-accent"></span>Sales Till</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Stock Control</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Purchase Orders</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Goods In</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Customer Accounts</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Delivery Routing</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Driver App</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Service Jobs</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Opayo Payments</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Pricing Engine</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Rebate Management</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Audit Log</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Reports &amp; Dashboard</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Email Templates</div>
+        <div class="marquee-item"><span class="dot-accent"></span>PDF Documents</div>
+        <div class="marquee-item"><span class="dot-accent"></span>Gift Cards</div>
+      </div>
+    </div>
+
+    <!-- ===== Modules ===== -->
+    <section class="section" id="modules">
+      <div class="container">
+        <div class="split-head">
+          <div>
+            <div class="section-line erp-reveal"></div>
+            <p class="section-tag">02 / What's included</p>
+            <h2 class="display-l erp-reveal">
+              Every module an<br/><span class="accent underline-anim">appliance retailer</span><br/>actually needs.
+            </h2>
+          </div>
+          <p class="lead lead-wide erp-reveal">
+            Not a generic ERP with appliance bolt-ons. NextERP was built
+            from the ground up for businesses that sell, deliver, service
+            and repair white and brown goods. Every feature reflects how
+            those businesses actually operate day-to-day.
+          </p>
+        </div>
+
+        <div class="module-grid erp-stagger" id="moduleGrid">
+
+          <div class="module-card">
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                <rect x="3" y="6" width="26" height="20" rx="2"/>
+                <line x1="3" y1="11" x2="29" y2="11"/>
+                <circle cx="6.5" cy="8.5" r="0.6" fill="currentColor"/>
+                <circle cx="9" cy="8.5" r="0.6" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>Point of Sale &amp; Sales Till</h3>
+            <p>Touch-friendly till for the shop floor. Cash, card and account payments. Quotes, orders and invoices in one seamless flow.</p>
+            <div><span class="feat-tag">Cash &amp; card</span><span class="feat-tag">Quotes → invoices</span><span class="feat-tag">Gift cards</span></div>
+          </div>
+
+          <div class="module-card">
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                <rect x="4" y="4" width="24" height="24" rx="2"/>
+                <line x1="9" y1="13" x2="23" y2="13"/>
+                <line x1="9" y1="19" x2="17" y2="19"/>
+                <path d="M20 17 L24 21 L20 25"/>
+              </svg>
+            </div>
+            <h3>Stock &amp; Inventory</h3>
+            <p>One record per unit. Track every appliance from goods-in to sale. Know exactly what's in the shop, warehouse and on the van at any moment.</p>
+            <div><span class="feat-tag">Serial tracking</span><span class="feat-tag">Location states</span><span class="feat-tag">Movements</span></div>
+          </div>
+
+          <div class="module-card">
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                <path d="M6 4h14l6 6v18H6z"/>
+                <polyline points="20,4 20,10 26,10"/>
+                <line x1="11" y1="17" x2="21" y2="17"/>
+                <line x1="11" y1="22" x2="17" y2="22"/>
+              </svg>
+            </div>
+            <h3>Purchasing &amp; Suppliers</h3>
+            <p>Purchase orders, goods-in, supplier returns and claimbacks. Full supplier ledger with payment history. Tradeplace catalogue integration.</p>
+            <div><span class="feat-tag">Purchase orders</span><span class="feat-tag">Goods in</span><span class="feat-tag">Claimbacks</span></div>
+          </div>
+
+          <div class="module-card">
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                <rect x="3" y="10" width="26" height="16" rx="2"/>
+                <path d="M8 10 V7 a8 8 0 0 1 16 0 v3"/>
+                <circle cx="16" cy="18" r="2.5"/>
+              </svg>
+            </div>
+            <h3>Customer Accounts &amp; Ledger</h3>
+            <p>Full account customer ledger. Outstanding balances, overdue flags, account statements. Credit limits and payment terms per customer.</p>
+            <div><span class="feat-tag">Ledger payments</span><span class="feat-tag">Statements</span><span class="feat-tag">Overdue alerts</span></div>
+          </div>
+
+          <div class="module-card">
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                <circle cx="16" cy="10" r="4"/>
+                <circle cx="6" cy="24" r="4"/>
+                <circle cx="26" cy="24" r="4"/>
+                <line x1="16" y1="14" x2="6" y2="20"/>
+                <line x1="16" y1="14" x2="26" y2="20"/>
+              </svg>
+            </div>
+            <h3>Delivery Route Planning</h3>
+            <p>Build delivery routes, optimise stop order, publish to drivers. Driver app works offline. GPS tracking and customer ETA sharing.</p>
+            <div><span class="feat-tag">Route optimiser</span><span class="feat-tag">Driver app</span><span class="feat-tag">Live tracking</span></div>
+          </div>
+
+          <div class="module-card">
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                <circle cx="16" cy="12" r="5"/>
+                <path d="M6 28 a10 8 0 0 1 20 0"/>
+                <polyline points="22,16 28,22 22,28"/>
+              </svg>
+            </div>
+            <h3>Service Jobs &amp; Engineers</h3>
+            <p>Log repair and service jobs against specific appliances. Assign engineers, track parts, raise invoices. Photo and signature capture on site.</p>
+            <div><span class="feat-tag">Service diary</span><span class="feat-tag">Parts tracking</span><span class="feat-tag">POD capture</span></div>
+          </div>
+
+          <div class="module-card">
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                <polyline points="4,24 10,14 16,18 22,10 28,14"/>
+                <line x1="4" y1="28" x2="28" y2="28"/>
+              </svg>
+            </div>
+            <h3>Pricing &amp; Campaigns</h3>
+            <p>Rule-based pricing engine. Competitor price tracking. Promotional campaigns with date ranges. Bulk price updates and rebate management.</p>
+            <div><span class="feat-tag">Price rules</span><span class="feat-tag">Campaigns</span><span class="feat-tag">Rebates</span></div>
+          </div>
+
+          <div class="module-card">
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                <rect x="4" y="7" width="24" height="18" rx="2"/>
+                <polyline points="4,9 16,19 28,9"/>
+              </svg>
+            </div>
+            <h3>Communications &amp; Documents</h3>
+            <p>Email invoices, quotes, statements and purchase orders directly from the system. Editable document templates. Staff and customer notification rules.</p>
+            <div><span class="feat-tag">Email templates</span><span class="feat-tag">PDF output</span><span class="feat-tag">Notifications</span></div>
+          </div>
+
+          <div class="module-card">
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                <circle cx="16" cy="16" r="3"/>
+                <path d="M16 4 V8 M16 24 V28 M4 16 H8 M24 16 H28 M7.5 7.5 L10.3 10.3 M21.7 21.7 L24.5 24.5 M7.5 24.5 L10.3 21.7 M21.7 10.3 L24.5 7.5"/>
+              </svg>
+            </div>
+            <h3>Reporting &amp; Dashboard</h3>
+            <p>Live KPI dashboard. Sales, stock, purchasing and margin reports. Scheduled runs, CSV export, and a full audit trail of every action.</p>
+            <div><span class="feat-tag">Live dashboard</span><span class="feat-tag">Margin reports</span><span class="feat-tag">Audit log</span></div>
+          </div>
+
+          <div class="module-card">
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                <path d="M16 4 L26 9 V17 C26 22 21 26 16 28 C11 26 6 22 6 17 V9 Z"/>
+                <polyline points="11,16 15,20 21,13"/>
+              </svg>
+            </div>
+            <h3>Permissions &amp; Staff</h3>
+            <p>Granular role-based access control. Every action is permission-gated and audit-logged. Add, remove or adjust staff access yourself — no code needed.</p>
+            <div><span class="feat-tag">Role-based</span><span class="feat-tag">Audit log</span><span class="feat-tag">Self-managed</span></div>
+          </div>
+
+          <div class="module-card">
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                <rect x="5" y="6" width="22" height="16" rx="2"/>
+                <line x1="5" y1="11" x2="27" y2="11"/>
+                <line x1="11" y1="22" x2="11" y2="27"/>
+                <line x1="21" y1="22" x2="21" y2="27"/>
+                <line x1="8" y1="27" x2="24" y2="27"/>
+              </svg>
+            </div>
+            <h3>Opayo Payment Integration</h3>
+            <p>Card payments through Opayo fully integrated into the till. Transactions reconcile automatically — no manual card machine totalling at close of day.</p>
+            <div><span class="feat-tag">Opayo / SagePay</span><span class="feat-tag">Auto-reconcile</span><span class="feat-tag">Till integration</span></div>
+          </div>
+
+          <div class="module-card">
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                <rect x="5" y="4" width="22" height="16" rx="2"/>
+                <line x1="10" y1="24" x2="10" y2="28"/>
+                <line x1="22" y1="24" x2="22" y2="28"/>
+                <line x1="7" y1="28" x2="25" y2="28"/>
+                <line x1="5" y1="10" x2="27" y2="10"/>
+              </svg>
+            </div>
+            <h3>Desktop App</h3>
+            <p>Runs as a native desktop app on Windows, Mac and Linux — same full system, no browser tab required. Core till functions available offline.</p>
+            <div><span class="feat-tag">Windows</span><span class="feat-tag">macOS</span><span class="feat-tag">Linux</span></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Small & large ===== -->
+    <section class="section" style="background: var(--stone-50); border-top: 1px solid var(--stone-200); border-bottom: 1px solid var(--stone-200);">
+      <div class="container">
+        <div class="split-head">
+          <div>
+            <div class="section-line erp-reveal"></div>
+            <p class="section-tag">03 / Who it's for</p>
+            <h2 class="display-l erp-reveal">
+              One shop or<br/><span class="accent underline-anim">ten locations.</span>
+            </h2>
+          </div>
+          <p class="lead lead-wide erp-reveal">
+            NextERP scales from a single-branch independent to a
+            multi-site retailer selling both white and brown goods.
+            The same system, the same clean interface — just more of it
+            as you grow. No IT support contract required at any scale.
+          </p>
+        </div>
+
+        <div class="scale-grid erp-stagger">
+          <div class="scale-card">
+            <p class="scale-label">Small business</p>
+            <h3>Independent retailer, one location</h3>
+            <ul>
+              <li>One till, one stockroom, full visibility</li>
+              <li>You manage it — no IT contract needed</li>
+              <li>Start with sales and stock, unlock more as you grow</li>
+              <li>Works on any PC, laptop or tablet in the shop</li>
+              <li>Flat licence fee — not a per-seat subscription</li>
+              <li>Support from the person who built it</li>
+            </ul>
+          </div>
+          <div class="scale-card">
+            <p class="scale-label">Growing business</p>
+            <h3>Multi-site or high-volume retailer</h3>
+            <ul>
+              <li>Multiple tills, multiple locations, one system</li>
+              <li>Delivery fleet with route planning and driver app</li>
+              <li>Service department with engineer scheduling</li>
+              <li>Account customers, credit limits &amp; full ledger</li>
+              <li>Granular staff permissions across teams</li>
+              <li>Every action logged — full audit trail, forever</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pull-quote erp-reveal">
+          <p>"Built by someone who has worked in the white and brown
+          goods industry and understands the real pressures of running
+          an appliance business — stock that doesn't fit neatly on a
+          shelf, deliveries that need precise scheduling, service jobs
+          that need serial-level tracking. NextERP was designed for
+          exactly this."</p>
+          <cite>— William McCabe, Skiddaw Digital</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Why NextERP ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="split-head">
+          <div>
+            <div class="section-line erp-reveal"></div>
+            <p class="section-tag">04 / Why NextERP</p>
+            <h2 class="display-l erp-reveal">
+              Not a theme.<br/><span class="accent underline-anim">A system.</span>
+            </h2>
+          </div>
+          <p class="lead lead-wide erp-reveal">
+            Most small-business ERP is either a generic platform dressed
+            up with an appliance plugin, or enterprise software that needs
+            a dedicated IT team to run it. NextERP is neither.
+          </p>
+        </div>
+
+        <div class="svc-also erp-reveal" style="margin-top:2.5rem;">
+          <div class="svc-also-grid">
+            <div class="also-card">
+              <div class="ico" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                  <polyline points="9,11 4,16 9,21"/>
+                  <polyline points="23,11 28,16 23,21"/>
+                  <line x1="19" y1="7" x2="13" y2="25"/>
+                </svg>
+              </div>
+              <h4>Purpose-built, not adapted</h4>
+              <p>
+                Every feature exists because an appliance business needed
+                it. Stock is counted in individual units. Deliveries are
+                routed by weight and volume. Service jobs track specific
+                serial numbers. Nothing is retrofitted from another industry.
+              </p>
+            </div>
+            <div class="also-card">
+              <div class="ico" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                  <circle cx="16" cy="16" r="3"/>
+                  <path d="M16 4 V8 M16 24 V28 M4 16 H8 M24 16 H28 M7.5 7.5 L10.3 10.3 M21.7 21.7 L24.5 24.5 M7.5 24.5 L10.3 21.7 M21.7 10.3 L24.5 7.5"/>
+                </svg>
+              </div>
+              <h4>Self-managed by design</h4>
+              <p>
+                Admin tasks that other systems need a developer for —
+                adding products, editing document templates, adjusting
+                pricing rules, managing staff permissions — are all done
+                through a clean browser interface. No technical knowledge
+                required, ever.
+              </p>
+            </div>
+            <div class="also-card">
+              <div class="ico" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                  <path d="M16 4 L26 9 V17 C26 22 21 26 16 28 C11 26 6 22 6 17 V9 Z"/>
+                  <polyline points="11,16 15,20 21,13"/>
+                </svg>
+              </div>
+              <h4>Solid and fully auditable</h4>
+              <p>
+                Every transaction is logged. Nothing is deleted — records
+                are voided or cancelled and kept forever. If something goes
+                wrong, you can trace exactly what happened and who did it,
+                down to the minute.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Industry background ===== -->
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="split-head">
+          <div>
+            <div class="section-line erp-reveal"></div>
+            <p class="section-tag">05 / Where it came from</p>
+            <h2 class="display-l erp-reveal">
+              Built from inside<br/><span class="accent underline-anim">the industry.</span>
+            </h2>
+          </div>
+          <p class="lead lead-wide erp-reveal">
+            NextERP wasn't designed by looking at appliance retail from
+            the outside. It was built by someone who has worked in white
+            and brown goods — who understands the operational pressures,
+            the quirks of supplier relationships, and the gap between
+            what generic software promises and what actually works on
+            the shop floor.
+          </p>
+        </div>
+
+        <div style="margin-top:2.5rem;" class="erp-stagger">
+          <div class="erp-work-row">
+            <span class="num">01</span>
+            <h3>Stock that doesn't behave like a supermarket</h3>
+            <p>Washing machines aren't widgets. NextERP tracks every unit individually — location, condition, serial, availability — not just a quantity on a shelf.</p>
+            <span class="arrow-r">→</span>
+          </div>
+          <div class="erp-work-row">
+            <span class="num">02</span>
+            <h3>Deliveries that need precision</h3>
+            <p>Large appliance delivery isn't a parcel drop. NextERP's route planner handles weight, volume, time windows and customer ETA sharing as standard.</p>
+            <span class="arrow-r">→</span>
+          </div>
+          <div class="erp-work-row">
+            <span class="num">03</span>
+            <h3>Service and repair that stays on the books</h3>
+            <p>Service jobs are logged against specific serial numbers, tracked through to invoice, and tied back to the original sale — all in one system.</p>
+            <span class="arrow-r">→</span>
+          </div>
+          <div class="erp-work-row">
+            <span class="num">04</span>
+            <h3>Supplier relationships that need real management</h3>
+            <p>Claimbacks, rebates, goods returns and a full supplier ledger — not bolt-on modules but core parts of how NextERP handles purchasing from day one.</p>
+            <span class="arrow-r">→</span>
+          </div>
+          <div class="erp-work-row" style="border-bottom:none;">
+            <span class="num">05</span>
+            <h3>White goods or brown goods — the same system</h3>
+            <p>Whether you sell washing machines, televisions, or both, NextERP handles it. The system doesn't care what the product category is — your processes are what matter.</p>
+            <span class="arrow-r">→</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-banner">
+      <svg class="cta-mtn" viewBox="0 0 1400 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMax slice">
+        <polygon fill="#1F3328" points="0,280 180,120 310,200 490,60 640,180 790,90 960,200 1110,100 1280,180 1400,130 1400,280"/>
+      </svg>
+      <div class="container">
+        <p class="kicker erp-reveal"><span class="dot" style="background:var(--sun);"></span> Licensing &amp; pricing</p>
+        <h2 class="erp-reveal">
+          Interested in NextERP<br/>for your business?<br/><span class="accent">Let's have a proper conversation.</span>
+        </h2>
+        <p class="erp-reveal">
+          Licensing is available to white and brown goods retailers directly.
+          No hard sell, no demo-ware. We'll talk through your business,
+          show you the system live, and give you a straight answer on
+          whether it's the right fit.
+        </p>
+        <div class="cta-row erp-reveal">
+          <a href="contact.html" class="btn btn-primary btn-pulse">Get in touch <span class="arrow">→</span></a>
+          <a href="work.html#erp" class="btn btn-ghost" style="color:var(--stone-200); border-color:rgba(255,255,255,0.2);">See the case study</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>skiddaw<span class="digital">.digital</span></h3>
+          <p>
+            NextERP — home appliance ERP available to licence.
+            Built and supported by Skiddaw Digital, West Cumbria.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>NextERP</h4>
+          <ul>
+            <li><a href="#modules">What's included</a></li>
+            <li><a href="work.html#erp">Case study</a></li>
+            <li><a href="contact.html">Licensing enquiries</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="mailto:william@skiddaw.digital">william@skiddaw.digital</a></li>
+            <li><a href="contact.html">Contact form →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year></span> Skiddaw Digital · William</span>
+        <span><span class="accent">▲</span> Built in Cumbria · NY 2620 2891</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    /* ---- Scroll reveal ---- */
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll(
+      '.erp-reveal, .erp-stagger, .section-line, .underline-anim'
+    ).forEach(el => io.observe(el));
+
+    /* ---- Stat counter ---- */
+    function animateCount(el, to, suffix, duration) {
+      const start = performance.now();
+      (function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - p, 4);
+        el.textContent = Math.round(to * ease) + (suffix || '');
+        if (p < 1) requestAnimationFrame(tick);
+      })(performance.now());
+    }
+
+    const countIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const to = parseInt(el.dataset.countTo, 10);
+        if (!isNaN(to)) animateCount(el, to, el.dataset.suffix || '', 1400);
+        countIO.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count-to]').forEach(el => countIO.observe(el));
+
+    /* ---- Point list stagger ---- */
+    const listIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('animated');
+        listIO.unobserve(entry.target);
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.point-list').forEach(el => listIO.observe(el));
+
+    /* ---- Mountain parallax ---- */
+    const heroMtn = document.getElementById('heroMtn');
+    const layers  = heroMtn ? heroMtn.querySelectorAll('.mtn-layer[data-depth]') : [];
+    if (layers.length) {
+      window.addEventListener('scroll', function () {
+        const sy = window.scrollY;
+        layers.forEach(layer => {
+          layer.style.transform = 'translateY(' + (sy * parseFloat(layer.dataset.depth)) + 'px)';
+        });
+      }, { passive: true });
+    }
+
+    /* ---- Module card 3-D tilt ---- */
+    document.querySelectorAll('.module-card').forEach(card => {
+      card.addEventListener('mousemove', function (e) {
+        const r  = card.getBoundingClientRect();
+        const dx = (e.clientX - (r.left + r.width  / 2)) / (r.width  / 2);
+        const dy = (e.clientY - (r.top  + r.height / 2)) / (r.height / 2);
+        card.style.transform = 'perspective(600px) rotateX(' + (-dy * 7) + 'deg) rotateY(' + (dx * 7) + 'deg) translateZ(4px)';
+        card.style.setProperty('--mx', ((e.clientX - r.left) / r.width  * 100).toFixed(1) + '%');
+        card.style.setProperty('--my', ((e.clientY - r.top)  / r.height * 100).toFixed(1) + '%');
+      });
+      card.addEventListener('mouseleave', function () {
+        card.style.transform = '';
+      });
+    });
+
+    /* ---- Header shadow on scroll ---- */
+    const header = document.querySelector('.site-header');
+    if (header) {
+      window.addEventListener('scroll', function () {
+        header.style.boxShadow = window.scrollY > 10 ? '0 2px 20px rgba(0,0,0,0.08)' : '';
+      }, { passive: true });
+    }
+
+  })();
+  </script>
+</body>
+</html>
